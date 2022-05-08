@@ -57,7 +57,7 @@ app.post("/processCrushForm", async (request, response) => {
         let formattedDate = Date().toLocaleString();
         let obj = { name: fname, crushName: sname, compatability: percentage, result: result, date: formattedDate };
 
-        client.db(dbName).collection(collectionName).insertOne(obj);
+        await client.db(dbName).collection(collectionName).insertOne(obj);
 
         obj.title = "Results";
         response.render("results", obj);
