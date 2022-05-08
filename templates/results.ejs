@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partial/head.ejs') %>
+    
+<body>
+
+    <div class="header-container">
+        <a href="/">Home</a>
+        <a href="/all-searches">See All Searches</a>
+    </div>
+    
+
+    <div class="center content-container result-container">
+        <h1>Results</h1>
+
+        <div class="result-content">
+            <h3> <strong>Name: </strong> <%- name %></h3>
+            <h3> <strong>Crush name: </strong> <%- crushName %></h3>
+            <h3> <strong>Compatability: </strong> <%- compatability %>%  </h3>
+            <h3> <strong>Result: </strong>  <%- result %> </h3>
+            <h3> <strong>Date: </strong> <%- date %> </h3>
+        </div>
+    </div>
+
+</body>
+
+</html>

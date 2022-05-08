@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partial/head.ejs') %>
+    
+<body>
+    
+    <div class="center content-container form-container">
+        <form class="crush-form" action="/processCrushForm" method="post">
+            <h1>Crush Compatability</h1>
+
+            <label> <strong>Your Name: </strong> <input type="text" name="name" required></label>
+            <br><br>
+            <label> <strong>Crush Name: </strong>  <input type="text" name="crushName" required></label>
+
+            <br><br>
+
+            <input type="submit" value="Moment of Truth!">
+        </form>
+    </div>
+
+</body>
+</html>

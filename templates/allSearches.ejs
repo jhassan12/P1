@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('partial/head.ejs') %>
+    
+<body>
+    <div class="header-container">
+        <h1 class="search-header"> All Searches (<%= searches.length %>)  </h1>
+        <a href="/"> Home </a>
+    </div>
+    
+    <% if (searches.length > 0) { %>
+        <div class="grid search-results">
+            <% for (let search of searches) { %>
+                <div class="col content-container search-container">
+                    <div class="result-content">
+                        <h3> <strong>Name: </strong> <%= search.name %></h3>
+                        <h3> <strong>Crush name: </strong> <%= search.crushName %></h3>
+                        <h3> <strong>Compatability: </strong> <%= search.compatability %>%  </h3>
+                        <h3> <strong>Result: </strong>  <%= search.result %> </h3>
+                        <h3> <strong>Date: </strong> <%= search.date %> </h3>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
+    
+</body>
+</html>
