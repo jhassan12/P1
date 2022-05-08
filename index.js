@@ -67,6 +67,13 @@ app.post("/processCrushForm", async (request, response) => {
     }
 });
 
+app.get("/wipe-database", (request, response) => {
+    const query = {};
+    client.db(dbName).collection(collectionName).deleteMany(query);
+
+    response.redirect("/");
+});
+
 async function getCompatabilityData(name, crushName) {
     const options = {
         method: 'GET',
