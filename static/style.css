@@ -79,6 +79,13 @@ h1 {
     text-align: left;
 }
 
+.result-content .name-field {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .result-container {
     width: 500px;
     height: 350px;
@@ -97,6 +104,8 @@ h1 {
 }
 
 .search-container {
+    width: 300px;
+    height: 250px;
     padding: 20px;
 }
 .search-container h3 {
@@ -109,11 +118,17 @@ h1 {
 
 .grid {
     display: grid;
+    margin: 10px;
     grid-gap: 20px;
-    padding: 15px;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (max-width: 650px) {
+    .grid {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 650px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -125,7 +140,7 @@ h1 {
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
     .grid {
         grid-template-columns: repeat(4, 1fr);
     }
