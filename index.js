@@ -1,4 +1,5 @@
-const port = 3000;
+var port = process.env.PORT || 3000;
+
 const path = require("path");
 const http = require("http");
 const bodyParser = require("body-parser");
