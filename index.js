@@ -1,5 +1,4 @@
-var port = process.env.PORT || 3000;
-
+const port = process.env.PORT || 3000;
 const path = require("path");
 const http = require("http");
 const bodyParser = require("body-parser");
@@ -28,8 +27,11 @@ const uri = `mongodb+srv://${userName}:${password}@cluster0.h8hwq.mongodb.net/my
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 client.connect(err => {
-    if (err) console.error(err);
-    else console.log("Connected to database successfully...");
+    if (err) {
+        console.error(err);  
+    } else {
+        console.log("Connected to database successfully...");
+    }
 });
 
 app.get("/", (request, response) => {
@@ -37,8 +39,13 @@ app.get("/", (request, response) => {
 });
 
 app.get("/all-searches", async (request, response) => {
-    let searches = await getAllSearchesFromDatabase();
-    response.render("allSearches", { title: "All Searches", searches: searches });
+    try {
+        let searches = await getAllSearchesFromDatabase();
+        response.render("allSearches", { title: "All Searches", searches: searches });
+    } catch (err) {
+        console.error(err);
+        response.render("error", { title: "Something Bad Happend" });
+    }
 });
 
 app.post("/processCrushForm", async (request, response) => {
