@@ -19,5 +19,13 @@
         </form>
     </div>
 
+    <script>
+        document.querySelectorAll("input").forEach(el => {
+            el.addEventListener("input", (e) => {
+                e.target.value = e.target.value.replaceAll(" ", "");
+            })
+        });
+    </script>
+    
 </body>
 </html>

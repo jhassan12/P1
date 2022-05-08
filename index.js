@@ -49,8 +49,8 @@ app.get("/all-searches", async (request, response) => {
 });
 
 app.post("/processCrushForm", async (request, response) => {
-    let name = request.body.name;
-    let crushName = request.body.crushName;
+    let name = request.body.name.trim();
+    let crushName = request.body.crushName.trim();
 
     try {
         const { fname, sname, percentage, result } = await getCompatabilityData(name, crushName);
